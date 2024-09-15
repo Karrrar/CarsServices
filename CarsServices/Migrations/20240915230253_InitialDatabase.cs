@@ -14,10 +14,10 @@ namespace CarsServices.Migrations
                 name: "Drivers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Department = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Department = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,11 +28,11 @@ namespace CarsServices.Migrations
                 name: "Cars",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    VIN = table.Column<string>(type: "TEXT", nullable: true),
-                    PlateNumber = table.Column<string>(type: "TEXT", nullable: true),
-                    DriverId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    VIN = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PlateNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DriverId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
