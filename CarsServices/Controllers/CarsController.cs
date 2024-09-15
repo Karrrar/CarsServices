@@ -18,8 +18,6 @@ namespace CarsServices.Controllers
             carOne.VIN = "H23963y32y4234uy434";
             carOne.PlateNumber = "11 M 12328";
 
-            carOne.Owner = new Person();
-            carOne.Owner.Name = "Ali";
             Person driveOne = new Person();
             carOne.Driver = driveOne;
             carOne.Driver.Department = "3445";
@@ -32,8 +30,6 @@ namespace CarsServices.Controllers
             carTwo.VIN = "H23978872342";
             carTwo.PlateNumber = "11 M 478833";
 
-            carTwo.Owner = new Person();
-            carTwo.Owner.Name = "Huda";
             //Person driveTwo = new Person();
             //carTwo.Driver = driveTwo;
             //carTwo.Driver.Departmetn = "3445";
