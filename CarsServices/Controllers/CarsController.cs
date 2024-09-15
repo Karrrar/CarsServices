@@ -22,7 +22,7 @@ namespace CarsServices.Controllers
             carOne.Owner.Name = "Ali";
             Person driveOne = new Person();
             carOne.Driver = driveOne;
-            carOne.Driver.Departmetn = "3445";
+            carOne.Driver.Department = "3445";
 
             carOne.Driver.Name = "Mohammad";
 
