@@ -6,6 +6,7 @@ public class Part
   public string Name { get; set; }          // e.g., "Oil Filter"
   public string PartNumber { get; set; }
 
+  public decimal Price { get; set; }
   // Navigation property
   // Many-to-Many relationship with Service
   public List<Service> ServicesUsedIn { get; set; }

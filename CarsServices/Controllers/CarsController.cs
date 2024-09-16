@@ -9,32 +9,39 @@ namespace CarsServices.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
-        static private List<Car> cars;
+        static private CarsContaxt db;
+        
         public CarsController()
         {
-            cars = new List<Car>();
-
-
+            db = new CarsContaxt();
         }
         // GET: api/<CarsController>
         [HttpGet]
         public List<Car> GetCars()
         {
-            return cars;
+            return db.Cars.ToList();
         }
+        
+       [HttpGet("Parts")]
+        public List<Part> GetGetParts()
+        {
+            return db.Parts.ToList();
+        }
+
 
         // GET api/<CarsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Car Get(int id)
         {
-            return "value";
+            return db.Cars.Where(x => x.CarId == id).OrderBy(x => x.Year).First();
         }
 
         // POST api/<CarsController>
         [HttpPost]
         public void Post([FromBody] Car newCar)
         {
-            cars.Add(newCar);
+            db.Add(newCar);
+            db.SaveChanges();
         }
 
         // PUT api/<CarsController>/5
@@ -47,6 +54,10 @@ namespace CarsServices.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var carRoDelete = db.Cars.Where(x => x.CarId == id).First();
+
+            db.Cars.Remove(carRoDelete);
+            db.SaveChanges();
         }
     }
 }
