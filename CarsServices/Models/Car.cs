@@ -1,4 +1,6 @@
 
+using System.Text.Json.Serialization;
+
 namespace CarsServices.Models;
 
 public class Car
@@ -13,5 +15,6 @@ public class Car
   public string VIN { get; set; }   // Vehicle Identification Number
 
   // Navigation property: One Car can have many Services
+  [JsonIgnore]
   public List<Service> Services { get; set; }
 }

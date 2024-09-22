@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace CarsServices.Models;
 
 public class Part
@@ -9,5 +11,6 @@ public class Part
   public decimal Price { get; set; }
   // Navigation property
   // Many-to-Many relationship with Service
+  [JsonIgnore]
   public List<Service> ServicesUsedIn { get; set; }
 }
