@@ -1,6 +1,131 @@
-@CarsServices_HostAddress = http://localhost:5167
+@CarsServices_HostAddress = https://localhost:7100
 
-GET {{CarsServices_HostAddress}}/weatherforecast/
-Accept: application/json
+
+GET {{CarsServices_HostAddress}}/cars
+
+###
+
+POST {{CarsServices_HostAddress}}/cars
+Content-Type: application/json
+
+{
+  "driver": "string",
+  "owner": "string",
+  "make": "string",
+  "model": "string",
+  "year": 0,
+  "vin": "string"
+}
+###
+
+GET {{CarsServices_HostAddress}}/cars/0
+
+###
+
+DELETE {{CarsServices_HostAddress}}/cars/0
+
+###
+
+PUT {{CarsServices_HostAddress}}/cars/0
+Content-Type: application/json
+
+{
+  "carId": 0,
+  "driver": "string",
+  "owner": "string",
+  "make": "string",
+  "model": "string",
+  "year": 0,
+  "vin": "string"
+}
+
+###
+
+GET {{CarsServices_HostAddress}}/parts
+
+###
+
+POST {{CarsServices_HostAddress}}/parts
+Content-Type: application/json
+
+{
+  "name": "string",
+  "partNumber": "string",
+  "price": 0
+}
+
+###
+
+GET {{CarsServices_HostAddress}}/parts/0
+
+###
+
+DELETE {{CarsServices_HostAddress}}/parts/0
+
+###
+
+PUT {{CarsServices_HostAddress}}/parts/0
+Content-Type: application/json
+
+{
+  "partId": 0,
+  "name": "string",
+  "partNumber": "string",
+  "price": 0
+}
+
+###
+
+GET {{CarsServices_HostAddress}}/parts/PartsNames
+
+###
+
+GET {{CarsServices_HostAddress}}/parts/PartsPrices
+
+###
+
+GET {{CarsServices_HostAddress}}/services
+
+###
+
+POST {{CarsServices_HostAddress}}/services
+Content-Type: application/json
+
+{
+  "serviceId": 0,
+  "carId": 0,
+  "date": "2024-09-22T11:25:42.380Z",
+  "description": "string",
+  "partsUsed": [
+    {
+      "partId": 0
+    }
+  ]
+}
+
+###
+
+GET {{CarsServices_HostAddress}}/services/0
+
+###
+
+DELETE {{CarsServices_HostAddress}}/services/0
+
+###
+
+PUT {{CarsServices_HostAddress}}/services/0
+Content-Type: application/json
+
+{
+  "serviceId": 0,
+  "carId": 0,
+  "date": "2024-09-22T11:25:42.380Z",
+  "description": "string",
+  "partsUsed": [
+    {
+      "partId": 0
+    }
+  ]
+}
 
 ###
