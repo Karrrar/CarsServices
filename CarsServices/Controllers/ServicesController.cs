@@ -10,9 +10,9 @@ namespace CarsServices.Controllers
   {
     static private CarsContaxt db;
 
-    public ServicesController()
+    public ServicesController(CarsContaxt carsContaxt)
     {
-      db = new CarsContaxt();
+      db = carsContaxt;
     }
 
     // GET: api/<ServicesController>
