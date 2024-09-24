@@ -1,7 +1,7 @@
-using CarsServices.Models;
+namespace CarsServices.Models;
 
-namespace CarsServices;
 
+// Not in use
 public class Person
 {
   public int Id { get; set; }
