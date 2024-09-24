@@ -8,7 +8,7 @@ namespace CarsServices.Controllers
   [ApiController]
   public class ServicesController : ControllerBase
   {
-    static private CarsContaxt db;
+    private CarsContaxt db;
 
     public ServicesController(CarsContaxt carsContaxt)
     {
